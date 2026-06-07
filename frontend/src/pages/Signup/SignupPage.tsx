@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 /* ============================================
    SignupPage — Create an account
-   Matches the mockup reference: centered layout
    ============================================ */
 
 const DEPARTMENTS = [
@@ -57,9 +56,7 @@ export default function SignupPage() {
 
     setIsLoading(true);
     try {
-      // Simulate signup latency
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log('Signup payload:', { name, email, department, password });
       window.location.href = '/upload';
     } catch {
       setError('Registration failed. Please try again.');
@@ -70,7 +67,7 @@ export default function SignupPage() {
 
   return (
     <>
-      {/* Brand logo symbol (blue asterisk) */}
+      {/* Brand logo symbol */}
       <div className="mb-6 flex justify-start fade-in">
         <span className="brand-asterisk-color">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,16 +79,16 @@ export default function SignupPage() {
       </div>
 
       {/* Heading & Subtitle */}
-      <div className="mb-6 fade-in fade-in-delay-1">
+      <div className="mb-8 fade-in fade-in-delay-1">
         <h1 className="auth-title">Create an account</h1>
         <p className="auth-subtitle">
-          Access your tasks, notes, and projects anytime, anywhere - and keep everything flowing in one place.
+          Create your ReguTwin account to track regulatory feeds, analyze compliance circulars, and automate audit readiness.
         </p>
       </div>
 
       {/* Error Banner */}
       {error && (
-        <div className="error-banner mb-4 fade-in">
+        <div className="error-banner mb-5 fade-in">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
           </svg>
@@ -102,7 +99,7 @@ export default function SignupPage() {
       {/* Signup Form */}
       <form onSubmit={handleSubmit} className="fade-in fade-in-delay-2" id="signup-form">
         {/* Name Field */}
-        <div className="mb-4">
+        <div className="mb-6">
           <label htmlFor="signup-name" className="form-label">Full name</label>
           <input
             id="signup-name"
@@ -117,7 +114,7 @@ export default function SignupPage() {
         </div>
 
         {/* Email Field */}
-        <div className="mb-4">
+        <div className="mb-6">
           <label htmlFor="signup-email" className="form-label">Your email</label>
           <input
             id="signup-email"
@@ -132,7 +129,7 @@ export default function SignupPage() {
         </div>
 
         {/* Department Select */}
-        <div className="mb-4">
+        <div className="mb-6">
           <label htmlFor="signup-department" className="form-label">Department</label>
           <select
             id="signup-department"
@@ -148,7 +145,7 @@ export default function SignupPage() {
         </div>
 
         {/* Password Field */}
-        <div className="mb-4">
+        <div className="mb-6">
           <label htmlFor="signup-password" className="form-label">Password</label>
           <div className="relative">
             <input
@@ -255,11 +252,11 @@ export default function SignupPage() {
       </form>
 
       {/* Divider */}
-      <div className="divider my-5 fade-in fade-in-delay-3">
+      <div className="divider my-6 fade-in fade-in-delay-3">
         <span className="divider-text">or continue with</span>
       </div>
 
-      {/* Social Buttons (Pills from mockup) */}
+      {/* Social Buttons */}
       <div className="social-buttons-container fade-in fade-in-delay-3">
         <button type="button" className="social-btn" aria-label="Sign up with Behance">
           <span className="font-extrabold text-[15px] tracking-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Bē</span>

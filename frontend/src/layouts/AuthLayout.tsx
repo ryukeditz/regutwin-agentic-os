@@ -2,7 +2,8 @@ import { Outlet } from 'react-router-dom';
 
 /* ============================================
    AuthLayout — Split centered card design
-   Matches the mockup reference: gradient left + form right
+   Left panel: ReguTwin Agentic OS mesh gradient
+   Right panel: Clean auth form area
    ============================================ */
 export default function AuthLayout() {
   return (
@@ -25,9 +26,9 @@ export default function AuthLayout() {
 
           {/* Bottom branding messaging */}
           <div className="auth-panel-content">
-            <p className="auth-panel-bottom-text">You can easily</p>
+            <p className="auth-panel-bottom-text">ReguTwin AI</p>
             <h2 className="auth-panel-title">
-              Deploy AI agents to monitor, analyze, and automate compliance
+              Automate regulatory intelligence & compliance audits with Agentic OS
             </h2>
           </div>
         </div>

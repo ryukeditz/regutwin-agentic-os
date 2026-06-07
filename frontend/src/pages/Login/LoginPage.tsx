@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 /* ============================================
    LoginPage — Clean light card design
-   Matches the mockup reference: centered layout
    ============================================ */
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -23,9 +22,7 @@ export default function LoginPage() {
 
     setIsLoading(true);
     try {
-      // Simulate login latency
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log('Login payload:', { email, password });
       window.location.href = '/upload';
     } catch {
       setError('Invalid credentials. Please try again.');
@@ -36,7 +33,7 @@ export default function LoginPage() {
 
   return (
     <>
-      {/* Brand logo symbol (blue asterisk) */}
+      {/* Brand logo symbol */}
       <div className="mb-6 flex justify-start fade-in">
         <span className="brand-asterisk-color">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,16 +45,16 @@ export default function LoginPage() {
       </div>
 
       {/* Heading & Subtitle */}
-      <div className="mb-6 fade-in fade-in-delay-1">
+      <div className="mb-8 fade-in fade-in-delay-1">
         <h1 className="auth-title">Welcome back</h1>
         <p className="auth-subtitle">
-          Sign in to access your regulatory compliance dashboard and track regulations in real-time.
+          Sign in to access your ReguTwin compliance dashboard, monitor regulatory feeds, and audit policies.
         </p>
       </div>
 
       {/* Error Banner */}
       {error && (
-        <div className="error-banner mb-4 fade-in">
+        <div className="error-banner mb-5 fade-in">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
           </svg>
@@ -67,8 +64,8 @@ export default function LoginPage() {
 
       {/* Login Form */}
       <form onSubmit={handleSubmit} className="fade-in fade-in-delay-2" id="login-form">
-        {/* Email Field */}
-        <div className="mb-4">
+        {/* Email Field - Spacing mb-6 */}
+        <div className="mb-6">
           <label htmlFor="login-email" className="form-label">Your email</label>
           <input
             id="login-email"
@@ -82,7 +79,7 @@ export default function LoginPage() {
           />
         </div>
 
-        {/* Password Field */}
+        {/* Password Field - Spacing mb-8 */}
         <div className="mb-8">
           <label htmlFor="login-password" className="form-label">Password</label>
           <div className="relative">
@@ -140,11 +137,11 @@ export default function LoginPage() {
       </form>
 
       {/* Divider */}
-      <div className="divider my-5 fade-in fade-in-delay-3">
+      <div className="divider my-6 fade-in fade-in-delay-3">
         <span className="divider-text">or continue with</span>
       </div>
 
-      {/* Social Buttons (Pills from mockup) */}
+      {/* Social Buttons */}
       <div className="social-buttons-container fade-in fade-in-delay-3">
         <button type="button" className="social-btn" aria-label="Sign in with Behance">
           <span className="font-extrabold text-[15px] tracking-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Bē</span>
